@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'carts.apps.CartsConfig',
     'orders.apps.OrdersConfig',
     'payments.apps.PaymentsConfig',
-
+    'meiduo_admin.apps.MeiduoAdminConfig',
     # 'haystack',
     # 'django_crontab',  # 定时任务
 ]
@@ -314,3 +314,7 @@ ALIPAY_RETURN_URL = 'http://www.meiduo.site:8000/payment/status/'  # 支付成�
 #      '>> ' + os.path.join(os.path.dirname(BASE_DIR), 'logs/crontab.log'))
 # ]
 # CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'  # 支持中文
+REST_FRAMEWORK = {
+    # 指定DRF框架的异常处理函数
+    'EXCEPTION_HANDLER': 'meiduo_admin.utils.exceptions.exception_handler',
+}
