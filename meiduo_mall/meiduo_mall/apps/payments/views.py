@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django import http
-from alipay import Alipay
+from alipay import AliPay
 from django.conf import settings
 import os
 from orders.models import OrderInfo
