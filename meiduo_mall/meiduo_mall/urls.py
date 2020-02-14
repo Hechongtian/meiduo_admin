@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from meiduo_admin.views import spus
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -29,4 +30,5 @@ urlpatterns = [
     url('^', include('orders.urls')),
     url('^', include('payments.urls')),
     url('^meiduo_admin/', include('meiduo_admin.urls')),
+    url(r'^goods/simple/$', spus.SPUSimpleView.as_view()),
 ]
